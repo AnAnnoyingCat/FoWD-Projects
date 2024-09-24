@@ -1,4 +1,9 @@
 :root {
+  --border-color: #a0a0a0;
+  --border-radius: 1rem;
+  --space: 1rem;
+  --primary-color: #1677ff;
+  --dark-primary-color: #003eb3;
 }
 
 body {
@@ -38,9 +43,88 @@ body > main {
   grid-area: main;
   height: calc(100vh - 100px);
   overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: var(--space) 
+}
+
+body > main > article {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  width: 350px;
+  line-height: 1.5rem;
+
+  & header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    border-bottom: 1px solid var(--border-color);
+    padding: var(--space);
+
+    & a {
+      text-decoration: none;
+    }
+  }
+  
+  & main {
+    padding: var(--space);
+    width: inherit;
+    & img {
+      width: inherit;
+    }
+  }
+
+  & footer {
+    border-top: 1px solid var(--border-color);
+    & ul {
+      padding: 0;
+      list-style: none;
+    }
+    & ul{
+      display: flex;
+      justify-content: space-around;
+      font-size: 0.8em;
+    }
+  }
+}
+body > main > article:has(img){
+  & main{
+    padding: 0;
+  }
+}
+body > main > article:has(header):has(footer) img {
+  border-radius: 0;
+  width: 100%; 
+  height: auto; 
+  object-fit: cover;
+  display: block;
+}
+body > main > article:has(footer) img {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+  width: 100%; 
+  height: auto; 
+  object-fit: cover;
+  display: block;
+}
+body > main > article:has(header) img {
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  width: 100%; 
+  height: auto; 
+  object-fit: cover;
+  display: block;
+}
+body > main > article img {
+  border-radius: var(--border-radius);
+  width: 100%; 
+  height: auto; 
+  object-fit: cover;
+  display: block;
 }
 
 body > footer {
   border-top: 1px solid var(--border-color);
   background-color: #f0f0f0;
 }
+
+

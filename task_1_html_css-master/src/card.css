@@ -1,3 +1,10 @@
+body {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: var(--space)
+}
+
 article {
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
@@ -5,6 +12,9 @@ article {
   line-height: 1.5rem;
 
   & header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     border-bottom: 1px solid var(--border-color);
     padding: var(--space);
 
@@ -12,7 +22,7 @@ article {
       text-decoration: none;
     }
   }
-
+  
   & main {
     padding: var(--space);
     width: inherit;
@@ -27,6 +37,12 @@ article {
       padding: 0;
       list-style: none;
     }
+    & ul{
+      display: flex;
+      justify-content: space-around;
+      font-size: 0.8em;
+    }
+    
   }
 }
 
@@ -56,31 +72,12 @@ article:has(header) img {
   object-fit: cover;
   display: block;
 }
-article:not(:has(header)):not(:has(footer)) img {
+article img {
   border-radius: var(--border-radius);
   width: 100%; 
   height: auto; 
   object-fit: cover;
   display: block;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-body {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-  gap: var(--space)
-}
-
-footer ul {
-  display: flex;
-  justify-content: space-around;
-  font-size: 0.8em;
 }
 
 
