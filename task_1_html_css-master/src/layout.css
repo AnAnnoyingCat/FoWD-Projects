@@ -10,10 +10,10 @@ body {
   overflow: hidden;
   color: black;
   display: grid;
-
 }
 /*Sidebar*/
 body > section{
+  
   padding-left: 0.5em;
   padding-right: 1em;
   border-right: 1px solid var(--border-color);
