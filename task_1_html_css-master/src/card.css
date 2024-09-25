@@ -33,14 +33,16 @@ article {
 
   & footer {
     border-top: 1px solid var(--border-color);
-    & ul {
+    & ul{
       padding: 0;
       list-style: none;
-    }
-    & ul{
       display: flex;
       justify-content: space-around;
       font-size: 0.8em;
+    }
+    & li:not(:first-child) {
+      border-left: 1px solid var(--border-color);
+      padding-left: 50px;
     }
     
   }
